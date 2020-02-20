@@ -1,0 +1,219 @@
+body {
+    background-image: linear-gradient(to right, rgb(194, 229, 156), rgb(100, 179, 244));
+    max-height: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 50px;
+    color: white;
+}
+
+#playlists {
+    position: absolute;
+    left: 20px;
+    height: 100%;
+    width: calc(30% - 20px);
+}
+
+#songs {
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    width: 70%;
+    height: 100%;
+}
+
+#track-wrapper {
+    height: calc(100% - 200px);
+    overflow: scroll;
+    margin-top: 80px;
+}
+
+#download_songs, #confirm_download, #cancel {
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    font-family: "Catamaran", monospace;
+    font-weight: 200;
+    font-size: 15px;
+    letter-spacing: 0.2em;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    transition-duration: 0.3s;
+}
+
+#confirm_download {
+    margin-top: 80px;
+    position: relative;
+    width: 40% !important;
+    right: 0 !important;
+}
+
+#cancel {
+    margin-top: 80px;
+    position: relative;
+    width: 40% !important;
+    left: 0 !important;
+}
+
+
+#download_songs:hover, #confirm_download:hover, #cancel:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+#download_songs:focus, #confirm_download:focus, #cancel:focus {
+    outline: 0;
+}
+
+#download_confirm {
+    position: absolute;
+    display: none;
+    left: 50%;
+    margin-left: -30%;
+    top: 0px;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+#tent_songs {
+    height: 60%;
+    overflow: scroll;
+}
+
+.playlist_button {
+    font-family: "Catamaran", monospace;
+    font-weight: 200;
+    font-size: 20px;
+    padding: 10px 15px;
+    letter-spacing: 0.1em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    text-align: left;
+}
+
+.playlist_button:hover {
+    background-color: rgba(255, 255, 255, 0.74);
+}
+
+.playlist_button:focus {
+    outline: 0;
+}
+
+.playlist_active {
+    background-color: rgba(255, 255, 255, 0.74);
+}
+
+.track {
+    font-family: "Catamaran", monospace;
+    font-weight: 200;
+    font-size: 20px;
+    padding: 10px 15px;
+    letter-spacing: 0.1em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    width: 80%;
+}
+
+.track:hover {
+    background-color: rgba(255, 255, 255, 0.74);
+}
+
+.track:focus {
+    outline: 0;
+}
+
+.track_active {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0 auto;
+    width: 80%;
+    text-align: left;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 7.1px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.container:hover input ~ .checkmark {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.container h1 {
+    position: absolute;
+    font-family: "Catamaran", monospace;
+    font-weight: 200;
+    font-size: 25px;
+    letter-spacing: 0.1em;
+    margin: 0;
+    left: 35px;
+    top: 0;
+}
