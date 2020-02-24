@@ -11,6 +11,7 @@
   ],
   "require": {
     "jwilsson/spotify-web-api-php": "3.0.0",
-    "norkunas/youtube-dl-php": "v1.4.0"
+    "norkunas/youtube-dl-php": "v1.3.0",
+    "ext-zip": "*"
   }
 }

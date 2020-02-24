@@ -20,7 +20,7 @@ use YoutubeDl\Exception\GeoBlockedException;
 
 class YoutubeDl
 {
-    const PROGRESS_PATTERN = '#\[download\]\s+(?<percentage>\d+(?:\.\d+)?%)\s+of\s+[~]?(?<size>\d+(?:\.\d+)?(?:K|M|G)iB)(?:\s+at\s+(?<speed>\d+(?:\.\d+)?(?:K|M|G)iB/s))?(?:\s+ETA\s+(?<eta>[\d:]{2,8}))#i';
+    const PROGRESS_PATTERN = '#\[download\]\s+(?<percentage>\d+(?:\.\d+)?%)\s+of\s+(?<size>\d+(?:\.\d+)?(?:K|M|G)iB)(?:\s+at\s+(?<speed>\d+(?:\.\d+)?(?:K|M|G)iB/s))?(?:\s+ETA\s+(?<eta>[\d:]{2,8}))#i';
 
     const RECODE_VIDEO_FORMATS = ['mp4', 'flv', 'ogg', 'webm', 'mkv', 'avi'];
 
@@ -57,7 +57,7 @@ class YoutubeDl
     /**
      * @var array
      */
-    protected $allowedAudioFormats = ['best', 'aac', 'vorbis', 'mp3', 'm4a', 'opus', 'wav', 'flac'];
+    protected $allowedAudioFormats = ['best', 'aac', 'vorbis', 'mp3', 'm4a', 'opus', 'wav'];
 
     /**
      * @var callable
@@ -187,7 +187,7 @@ class YoutubeDl
             throw new YoutubeDlException('Failed to detect metadata file.');
         }
 
-        $metadataFile = $this->downloadPath.DIRECTORY_SEPARATOR.basename($m[1]);
+        $metadataFile = $this->downloadPath.'/'.$m[1];
 
         $videoData = $this->jsonDecode(trim(file_get_contents($metadataFile)));
 
@@ -204,7 +204,7 @@ class YoutubeDl
                 $videoData['_filename'] = pathinfo($this->findFile($videoData['_filename'], 'mkv'), PATHINFO_BASENAME);
             }
 
-            $videoData['file'] = new \SplFileInfo($this->downloadPath.DIRECTORY_SEPARATOR.$videoData['_filename']);
+            $videoData['file'] = new \SplFileInfo($this->downloadPath.'/'.$videoData['_filename']);
         } else {
             $videoData['file'] = null;
         }
@@ -257,7 +257,7 @@ class YoutubeDl
 
     protected function findFile(string $fileName, string $extension)
     {
-        $iterator = new \RegexIterator(new \DirectoryIterator($this->downloadPath), sprintf('/%s\.%s$/ui', preg_quote(pathinfo($fileName, PATHINFO_FILENAME), DIRECTORY_SEPARATOR), '('.$extension.')'), \RegexIterator::GET_MATCH);
+        $iterator = new \RegexIterator(new \DirectoryIterator($this->downloadPath), sprintf('/%s\.%s$/ui', preg_quote(pathinfo($fileName, PATHINFO_FILENAME), '/'), '('.$extension.')'), \RegexIterator::GET_MATCH);
         $iterator->rewind();
 
         return $iterator->current()[0];

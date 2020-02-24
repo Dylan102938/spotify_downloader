@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c528d01ecab0323b8e40c03f0dd097d",
+    "content-hash": "cc8d47e792a0616810840a6d05fdc3a6",
     "packages": [
         {
             "name": "jwilsson/spotify-web-api-php",
@@ -54,16 +54,16 @@
         },
         {
             "name": "norkunas/youtube-dl-php",
-            "version": "v1.4.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/norkunas/youtube-dl-php.git",
-                "reference": "32bcd6821034966d6255a0fac73c8fe7b3c03f80"
+                "reference": "b152019ca970cec6de9572520ab70bd6dd39fa10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/norkunas/youtube-dl-php/zipball/32bcd6821034966d6255a0fac73c8fe7b3c03f80",
-                "reference": "32bcd6821034966d6255a0fac73c8fe7b3c03f80",
+                "url": "https://api.github.com/repos/norkunas/youtube-dl-php/zipball/b152019ca970cec6de9572520ab70bd6dd39fa10",
+                "reference": "b152019ca970cec6de9572520ab70bd6dd39fa10",
                 "shasum": ""
             },
             "require": {
@@ -101,7 +101,7 @@
                 "youtube",
                 "youtube-dl"
             ],
-            "time": "2019-10-08T09:43:06+00:00"
+            "time": "2019-05-29T11:26:25+00:00"
         },
         {
             "name": "symfony/options-resolver",

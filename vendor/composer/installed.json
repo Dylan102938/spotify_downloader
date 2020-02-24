@@ -49,17 +49,17 @@
     },
     {
         "name": "norkunas/youtube-dl-php",
-        "version": "v1.4.0",
-        "version_normalized": "1.4.0.0",
+        "version": "v1.3.0",
+        "version_normalized": "1.3.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/norkunas/youtube-dl-php.git",
-            "reference": "32bcd6821034966d6255a0fac73c8fe7b3c03f80"
+            "reference": "b152019ca970cec6de9572520ab70bd6dd39fa10"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/norkunas/youtube-dl-php/zipball/32bcd6821034966d6255a0fac73c8fe7b3c03f80",
-            "reference": "32bcd6821034966d6255a0fac73c8fe7b3c03f80",
+            "url": "https://api.github.com/repos/norkunas/youtube-dl-php/zipball/b152019ca970cec6de9572520ab70bd6dd39fa10",
+            "reference": "b152019ca970cec6de9572520ab70bd6dd39fa10",
             "shasum": ""
         },
         "require": {
@@ -71,7 +71,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.5"
         },
-        "time": "2019-10-08T09:43:06+00:00",
+        "time": "2019-05-29T11:26:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

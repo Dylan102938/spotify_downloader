@@ -100,13 +100,26 @@ $("#download_songs").click(function() {
     });
 });
 
+
 $("#confirm_download").click(function() {
     $.ajax({
         type: 'POST',
         url: 'download.php',
         data: {songs: songsToDownload},
         success: function(response) {
-            alert(response);
+            // console.log(response);
+            // const a = document.createElement("a");
+            // a.style.display = "none";
+            // document.body.appendChild(a);
+            // a.href = window.URL.createObjectURL(
+            //     new Blob([response], {type: 'octet/stream'})
+            // );
+            // console.log(a);
+            // a.setAttribute("download", "yeet.zip");
+            // a.click();
+            // window.URL.revokeObjectURL(a.href);
+            // document.body.removeChild(a);
+            window.location = response;
         }
     });
 });

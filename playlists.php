@@ -60,8 +60,8 @@
     </head>
 
     <body>
-        <input type = "hidden" id = "playlist_names" value = "<? echo $playlist_names_string ?>">
-        <? echo $playlist_tracks_names_string ?>
+        <input type = "hidden" id = "playlist_names" value = "<?php echo $playlist_names_string ?>">
+        <?php echo $playlist_tracks_names_string ?>
 
         <div id = "download_confirm">
             <h1>Songs to Download</h1>
@@ -72,7 +72,7 @@
 
         <div id = "playlists">
             <h1>My Playlists</h1>
-            <? echo $playlist_names_button; ?>
+            <?php echo $playlist_names_button; ?>
             <button id = "download_songs">Download Songs</button>
         </div>
 
